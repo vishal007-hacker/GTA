@@ -1,0 +1,78 @@
+# re-agent configuration
+# Profile: gta-reversed
+# Copy to re-agent.yaml and fill in a real api_key. Do not commit re-agent.yaml.
+
+project_profile:
+  name: gta-reversed
+  language_standard: C++23
+  prompt_rules:
+  - Use real member names from the existing project and reference headers
+  - Never call virtual methods on this inside hook implementations
+  - Use matrix.TransformVector(vec) instead of deprecated Multiply3x3
+  - Verify struct offsets against project VALIDATE_OFFSET checks
+  hook_patterns:
+  - RH_ScopedInstall\s*\(\s*(\w+)\s*,\s*(0x[0-9A-Fa-f]+)
+  - RH_ScopedVirtualInstall\s*\(\s*(\w+)\s*,\s*(0x[0-9A-Fa-f]+)
+  stub_patterns:
+  - plugin::Call
+  stub_markers:
+  - NOTSA_UNREACHABLE
+  stub_call_prefix: plugin::Call
+  class_macro: RH_ScopedClass\(([A-Za-z_][A-Za-z0-9_]*)\)
+  source_root: source/game_sa
+  source_extensions:
+  - .cpp
+  - .h
+  - .hpp
+  hooks_csv: docs/hooks.csv
+llm:
+  provider: openai
+  model: gemini-flash-latest
+  base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+  api_key: REPLACE_ME
+  max_tokens: 4096
+  temperature: 0.0
+  timeout_s: 1800
+backend:
+  type: ghidra-bridge
+  cli_path: C:\path\to\ghidra-bridge.exe
+  timeout_s: 45
+parity:
+  enabled: true
+  call_count_warn_diff: 3
+  inline_wrapper_autoskip: false
+  cache_dir: .cache/re-agent-parity
+orchestrator:
+  max_review_rounds: 4
+  max_llm_calls_per_function: 80
+  cumulative_validation: true
+  max_functions_per_class: 10
+  objective_verifier_enabled: true
+  objective_call_count_tolerance: 3
+  objective_control_flow_tolerance: 2
+  investigation_enabled: true
+  max_investigations: 8
+  selection_strategy: dependency-order
+  max_attempts_per_function: 3
+validation:
+  enabled: true
+  copy_project: false
+  project_root: .
+  build_commands: []
+  test_commands: []
+  runtime_commands: []
+  require_build: false
+  require_tests: false
+  require_runtime: false
+  require_verified: false
+  trust_configured_commands: false
+  parity_fail_on_red: true
+  parity_fail_on_yellow: false
+  command_timeout_s: 900
+  working_directory: .
+  keep_project_copy: false
+output:
+  report_dir: reports/re-agent
+  log_dir: reports/re-agent/logs
+  session_file: re-agent-progress.json
+  format: json

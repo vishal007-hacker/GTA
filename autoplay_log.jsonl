@@ -1,0 +1,15 @@
+{"step": 1, "t": 8.62798810005188, "stage": "walking", "action": "W", "reason": "Walk forward with CJ to start exploring the game world."}
+{"step": 2, "t": 22.131414890289307, "stage": "walking", "action": "W", "reason": "Walk forward to explore the neighborhood."}
+{"step": 3, "t": 28.85230302810669, "stage": "walking", "action": "W", "reason": "Walk forward to begin playing and move CJ out of the alley."}
+{"step": 4, "t": 37.57244300842285, "stage": "walking", "action": "W", "reason": "Walk forward to begin free roam gameplay."}
+{"step": 5, "t": 49.95753788948059, "stage": "main_menu", "action": "ENTER", "reason": "Start New Game is selected, press Enter to confirm."}
+{"step": 6, "t": 57.67999625205994, "stage": "main_menu", "action": "DOWN", "reason": "Navigate down to START NEW GAME"}
+{"step": 7, "t": 67.57777452468872, "stage": "main_menu", "action": "ENTER", "reason": "Select Start New Game to begin the story"}
+{"step": 8, "t": 77.16250014305115, "stage": "walking", "action": "W", "reason": "Walk forward towards the bicycle and objective marker."}
+{"step": 9, "t": 88.17512679100037, "stage": "driving", "action": "W", "reason": "Hold down W to pedal the bicycle."}
+{"step": 10, "t": 97.8578851222992, "stage": "walking", "action": "W", "reason": "Walk forward to start exploring the neighborhood."}
+{"step": 11, "t": 111.38957571983337, "stage": "walking", "action": "W", "reason": "Walk forward to start exploring or approach the bike."}
+{"step": 12, "t": 123.41688919067383, "stage": "main_menu", "action": "DOWN", "reason": "Navigate from Resume to Start New Game"}
+{"step": 13, "t": 130.6561040878296, "stage": "main_menu", "action": "UP", "reason": "Navigate up to Start New Game from Stats."}
+{"step": 14, "t": 139.36527037620544, "stage": "main_menu", "action": "UP", "reason": "Move selection from Stats up to Start New Game."}
+{"step": 15, "t": 148.74616074562073, "stage": "other", "action": "DOWN", "reason": "Navigate down to Start New Game from Pause Menu."}

@@ -1,0 +1,19 @@
+# Secrets / machine-local config (see *.yaml.example for templates)
+re-agent.yaml
+ghidra-bridge.yaml
+re-agent.yaml.lock
+re-agent-progress.json.lock
+
+# Decompiled/analyzed output derived directly from the copyrighted gta_sa.exe binary -
+# not safe or appropriate to publish. Ghidra project DB + per-function decompile exports.
+ghidra_project/
+.ghidra-exports/
+
+# Reversed/reconstructed game source (ours + pulled from gta-reversed reference project) -
+# same binary-derived copyright concern as above.
+source/
+reports/
+
+# Python
+__pycache__/
+*.pyc

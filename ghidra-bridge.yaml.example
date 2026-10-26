@@ -1,0 +1,21 @@
+# Copy to ghidra-bridge.yaml and point these at your local Ghidra install/project.
+ghidra:
+  install_dir: "C:\\path\\to\\ghidra_12.1.4_PUBLIC"
+  project_dir: "C:\\path\\to\\ghidra_project"
+  project_name: "gta_sa"
+  program_name: "gta_sa.exe"
+
+paths:
+  export_dir: ".ghidra-exports"
+
+source:
+  root: "source/game_sa"
+  stub_patterns:
+    - 'plugin::CallMethod<0x([0-9A-Fa-f]+)'
+    - 'plugin::Call<0x([0-9A-Fa-f]+)'
+  hook_patterns:
+    - 'RH_ScopedInstall\s*\(\s*(\w+)\s*,\s*(0x[0-9A-Fa-f]+)'
+  class_macro: "RH_ScopedClass\\(([A-Za-z_][A-Za-z0-9_]*)\\)"
+  file_extensions:
+    - ".cpp"
+    - ".h"

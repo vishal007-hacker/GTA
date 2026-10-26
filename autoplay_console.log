@@ -1,0 +1,17 @@
+[1] stage=walking action=W :: Walk forward with CJ to start exploring the game world.
+[2] stage=walking action=W :: Walk forward to explore the neighborhood.
+[3] stage=walking action=W :: Walk forward to begin playing and move CJ out of the alley.
+[4] stage=walking action=W :: Walk forward to begin free roam gameplay.
+[5] stage=main_menu action=ENTER :: Start New Game is selected, press Enter to confirm.
+[6] stage=main_menu action=DOWN :: Navigate down to START NEW GAME
+[7] stage=main_menu action=ENTER :: Select Start New Game to begin the story
+[8] stage=walking action=W :: Walk forward towards the bicycle and objective marker.
+[9] stage=driving action=W :: Hold down W to pedal the bicycle.
+[10] stage=walking action=W :: Walk forward to start exploring the neighborhood.
+[11] stage=walking action=W :: Walk forward to start exploring or approach the bike.
+[12] stage=main_menu action=DOWN :: Navigate from Resume to Start New Game
+[13] stage=main_menu action=UP :: Navigate up to Start New Game from Stats.
+[14] stage=main_menu action=UP :: Move selection from Stats up to Start New Game.
+[15] stage=other action=DOWN :: Navigate down to Start New Game from Pause Menu.
+Window disappeared, stopping.
+Done. Transcript: D:\GTA\autoplay_log.jsonl
